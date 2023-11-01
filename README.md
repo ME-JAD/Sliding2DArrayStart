@@ -1,4 +1,4 @@
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ME-JAD/Sliding2DArrayStart/main.yml)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/Jean-Aymeric/Sliding2DArrayStart/main.yml)
 
 # Kata Sliding 2D Array made by JAD
 
