@@ -1,4 +1,4 @@
-![example workflow](https://github.com/Jean-Aymeric/Sliding2DArrayStart/actions/workflows/WORKFLOW-FILE/badge.svg)
+![example workflow](https://github.com/Jean-Aymeric/Sliding2DArrayStart/actions/workflows/maven.yml/badge.svg)
 # Kata Sliding 2D Array made by JAD
 
 ## Objectif de ce Kata
