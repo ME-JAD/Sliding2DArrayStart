@@ -52,7 +52,7 @@ La clef ne pouvant être modifiée (y compris ces attributs), il faut que la pi�
 la `HashMap` et se recrée à chaque déplacement. Ce traitement peut être très gourmand en ressources
 si le nombre de pièces est trop important.
 
-![Diagramme de classe d'un exemple d'implémentation de jeu 2D](img\classdiagramboardgamesample.png)
+![Diagramme de classe d'un exemple d'implémentation de jeu 2D](https://github.com/Jean-Aymeric/Sliding2DArrayStart/blob/master/img/classdiagramboardgamesample.png)
 
 La solution est d'utiliser une portion du monde et non le monde complet. Ainsi la `HashMap` est
 moins sollicitée.
@@ -65,14 +65,14 @@ sera "gelé".
 La portion de monde est définie par la position du joueur et son champ de vision.
 
 Voici une petite illustration pour mieux comprendre le fonctionnement :
-![Illustration du tableau 2D glissant](img\sliding2darray1.png)
+![Illustration du tableau 2D glissant](https://github.com/Jean-Aymeric/Sliding2DArrayStart/blob/master/img/sliding2darray1.png)
 Seuls les éléments dans le cadre vert sont "vivants". Les autres sont "gelés". Le personnage joueur
 est lui toujours au centre du carré vert. Lorsqu'il se déplace le carré vert se déplace avec lui.
 
 Ce fonctionnement permet de gérer des mondes de taille infinie avec une complexité de N par case, N
 étant le nombre de pièces dans le champ de vision du joueur. Il a aussi un autre avantage. Il
 pertmet de gérer automatiquement les bords du monde (s'ils existent).
-![Illustration du tableau 2D glissant](img\sliding2darray2.png)
+![Illustration du tableau 2D glissant](https://github.com/Jean-Aymeric/Sliding2DArrayStart/blob/master/img/sliding2darray2.png)
 
 Mais l'utilisation de ce tableau glissant soulève un nouveau problème. Il doit être régénéré à
 chaque déplacement du joueur. Un tableau étant à dimension fixe en mémoire, il faut déplacer chaque
@@ -87,14 +87,14 @@ remplacée par la nouvelle colonne de droite que le joueur voit. Les autres colo
 pas.
 
 Une autre illustration pour bien comprendre le principe :
-![Illustration du tableau 2D glissant](img\sliding2darray3.png)
+![Illustration du tableau 2D glissant](https://github.com/Jean-Aymeric/Sliding2DArrayStart/blob/master/img/sliding2darray3.png)
 La nouvelle colonne de droite est stockée à gauche du tableau glissant.
 
 C'est ce tableau glissant que vous allez devoir implémenter dans ce Kata.
 
 ## Voici le diagramme de classe de la situation initiale :
 
-![Diagramme de classe de la situation initiale](img\classdiagramsliding2darray.png)
+![Diagramme de classe de la situation initiale](https://github.com/Jean-Aymeric/Sliding2DArrayStart/blob/master/img/classdiagramsliding2darray.png)
 
 Comme vous pouvez le voir, il n'y a pas de `Main`, mais il y a des tests unitaires.
 
