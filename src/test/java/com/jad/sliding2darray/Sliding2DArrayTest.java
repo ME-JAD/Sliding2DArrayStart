@@ -9,91 +9,105 @@ import org.junit.jupiter.api.Test;
 
 class Sliding2DArrayTest {
 
-  private static final Array2DImpl ARRAY_2D_IMPL = new Array2DImpl();
-  private static final int NB_ROWS = 5;
-  private static final int NB_COLUMNS = 10;
-  private ISliding2DArray<Point> slidingArray;
+  private final int nbRows = 5;
+  private final int nbColumns = 10;
+  private final Array2DImpl world = new Array2DImpl();
+  private ISliding2DArray<Point> playerView;
 
   @BeforeEach
   void initEach() {
-    this.slidingArray = new Sliding2DArray<>(Sliding2DArrayTest.NB_ROWS,
-        Sliding2DArrayTest.NB_COLUMNS, Sliding2DArrayTest.ARRAY_2D_IMPL);
+    this.playerView = new Sliding2DArray<>(this.nbRows, this.nbColumns, this.world);
   }
 
   @Test
   void getNbRows() {
-    assertEquals(Sliding2DArrayTest.NB_ROWS, this.slidingArray.getNbRows());
+    assertEquals(this.nbRows, this.playerView.getNbRows(), "getNbRows()");
   }
 
   @Test
   void getNbColumns() {
-    assertEquals(Sliding2DArrayTest.NB_COLUMNS, this.slidingArray.getNbColumns());
+    assertEquals(this.nbColumns, this.playerView.getNbColumns(), "getNbColumns()");
   }
 
   @Test
   void get() {
-    for (int row = 0; row < this.slidingArray.getNbRows(); row++) {
-      for (int column = 0; column < this.slidingArray.getNbColumns(); column++) {
-        assertEquals(Sliding2DArrayTest.ARRAY_2D_IMPL.get(row, column), this.slidingArray.get(row, column));
+    for (int row = 0; row < this.playerView.getNbRows(); row++) {
+      for (int column = 0; column < this.playerView.getNbColumns(); column++) {
+        assertEquals(this.world.get(row, column), this.playerView.get(row, column), "get(" + row + ", " + column + ")");
       }
     }
-    this.testValues();
-  }
-
-  private void testValues() {
-    assertArrayEquals(
-        Sliding2DArrayTest.ARRAY_2D_IMPL.getArray(this.slidingArray.getNbRows(), this.slidingArray.getNbColumns(),
-            this.slidingArray.getSliderRowPosition(), this.slidingArray.getSliderColumnPosition()),
-        this.slidingArray.getArray());
   }
 
   @Test
   void slide() {
-    this.slidingArray.slide(5, 3);
-    this.testValues();
+    this.playerView.slide(5, 3);
+    assertArrayEquals(
+        this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 5, 3),
+        this.playerView.getArray(), "slide(5, 3)");
   }
 
   @Test
   void slideUp() {
-    this.slidingArray.slideUp();
-    this.testValues();
-    for (int step = 0; step <= this.slidingArray.getNbRows(); step++) {
-      this.slidingArray.slideUp(step);
-      this.testValues();
+    this.playerView.slideUp();
+    assertArrayEquals(
+        this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), -1, 0),
+        this.playerView.getArray(), "slideUp()");
+    for (int step = 0; step <= this.playerView.getNbRows(); step++) {
+      this.playerView = new Sliding2DArray<>(this.nbRows, this.nbColumns, this.world);
+      this.playerView.slideUp(step);
+      assertArrayEquals(
+          this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), -step, 0),
+          this.playerView.getArray(), "slideUp(" + step + ")");
     }
   }
 
   @Test
   void slideDown() {
-    this.slidingArray.slideDown();
-    this.testValues();
-    for (int step = 0; step <= this.slidingArray.getNbRows(); step++) {
-      this.slidingArray.slideDown(step);
-      this.testValues();
+    this.playerView.slideDown();
+    assertArrayEquals(
+        this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 1, 0),
+        this.playerView.getArray(), "slideDown()");
+    assertEquals(new Point(1, 0), this.playerView.get(0, 0));
+    for (int step = 0; step <= this.playerView.getNbRows(); step++) {
+      this.playerView = new Sliding2DArray<>(this.nbRows, this.nbColumns, this.world);
+      this.playerView.slideDown(step);
+      assertArrayEquals(
+          this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), step, 0),
+          this.playerView.getArray(), "slideDown(" + step + ")");
     }
   }
 
   @Test
   void slideLeft() {
-    this.slidingArray.slideLeft();
-    this.testValues();
-    for (int step = 0; step <= this.slidingArray.getNbColumns(); step++) {
-      this.slidingArray.slideLeft(step);
-      this.testValues();
+    this.playerView.slideLeft();
+    assertArrayEquals(
+        this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 0, -1),
+        this.playerView.getArray(), "slideLeft()");
+    for (int step = 0; step <= this.playerView.getNbColumns(); step++) {
+      this.playerView = new Sliding2DArray<>(this.nbRows, this.nbColumns, this.world);
+      this.playerView.slideLeft(step);
+      assertArrayEquals(
+          this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 0, -step),
+          this.playerView.getArray(), "slideLeft(" + step + ")");
     }
   }
 
   @Test
   void slideRight() {
-    this.slidingArray.slideRight();
-    this.testValues();
-    for (int step = 0; step <= this.slidingArray.getNbColumns(); step++) {
-      this.slidingArray.slideRight(step);
-      this.testValues();
+    this.playerView.slideRight();
+    assertArrayEquals(
+        this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 0, 1),
+        this.playerView.getArray(), "slideRight()");
+    for (int step = 0; step <= this.playerView.getNbColumns(); step++) {
+      this.playerView = new Sliding2DArray<>(this.nbRows, this.nbColumns, this.world);
+      this.playerView.slideRight(step);
+      assertArrayEquals(
+          this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 0, step),
+          this.playerView.getArray(), "slideRight(" + step + ")");
     }
   }
 
-  static class Array2DImpl implements Array2D<Point> {
+  private static class Array2DImpl implements Array2D<Point> {
 
     private static final int ROWS = 100;
     private static final int COLUMNS = 100;
