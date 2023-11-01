@@ -1,4 +1,3 @@
-![Java CI with Maven](https://github.com/github/docs/actions/workflows/maven.yml/badge.svg)
 # Kata Sliding 2D Array made by JAD
 
 ## Objectif de ce Kata
