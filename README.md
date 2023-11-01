@@ -104,7 +104,7 @@ Si vous lancez les tests, vous devez obtenir ceci.
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.slideUp(Sliding2DArray.java:56)
-	at sliding2darray.Sliding2DArrayTest.slideUp(Sliding2DArrayTest.java:61)
+	at com.jad.sliding2darray.Sliding2DArrayTest.slideUp(Sliding2DArrayTest.java:61)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -113,7 +113,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.slideDown(Sliding2DArray.java:61)
-	at sliding2darray.Sliding2DArrayTest.slideDown(Sliding2DArrayTest.java:71)
+	at com.jad.sliding2darray.Sliding2DArrayTest.slideDown(Sliding2DArrayTest.java:71)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -122,7 +122,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.slideLeft(Sliding2DArray.java:66)
-	at sliding2darray.Sliding2DArrayTest.slideLeft(Sliding2DArrayTest.java:81)
+	at com.jad.sliding2darray.Sliding2DArrayTest.slideLeft(Sliding2DArrayTest.java:81)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -131,7 +131,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.get(Sliding2DArray.java:46)
-	at sliding2darray.Sliding2DArrayTest.get(Sliding2DArrayTest.java:40)
+	at com.jad.sliding2darray.Sliding2DArrayTest.get(Sliding2DArrayTest.java:40)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -140,7 +140,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.slide(Sliding2DArray.java:51)
-	at sliding2darray.Sliding2DArrayTest.slide(Sliding2DArrayTest.java:55)
+	at com.jad.sliding2darray.Sliding2DArrayTest.slide(Sliding2DArrayTest.java:55)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -149,7 +149,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.slideRight(Sliding2DArray.java:71)
-	at sliding2darray.Sliding2DArrayTest.slideRight(Sliding2DArrayTest.java:91)
+	at com.jad.sliding2darray.Sliding2DArrayTest.slideRight(Sliding2DArrayTest.java:91)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

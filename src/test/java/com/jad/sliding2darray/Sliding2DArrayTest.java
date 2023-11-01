@@ -1,11 +1,8 @@
-package sliding2darray;
+package com.jad.sliding2darray;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.jad.sliding2darray.Array2D;
-import com.jad.sliding2darray.ISliding2DArray;
-import com.jad.sliding2darray.Sliding2DArray;
 import java.awt.Point;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
