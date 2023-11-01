@@ -28,8 +28,29 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Test with Maven
-        run: mvn -B test --file pom.xml
-    
+      - name: Test getNbRows() with Maven
+        run: mvn -B test -Dtest=Sliding2DArrayTest#getNbRows --file pom.xml
+
+      - name: Test getNbColumns() with Maven
+        run: mvn -B test -Dtest=Sliding2DArrayTest#getNbRows --file pom.xml
+
+      - name: Test get() with Maven
+        run: mvn -B test -Dtest=Sliding2DArrayTest#getNbRows --file pom.xml
+
+      - name: Test slide() with Maven
+        run: mvn -B test -Dtest=Sliding2DArrayTest#getNbRows --file pom.xml
+
+      - name: Test slideUp() with Maven
+        run: mvn -B test -Dtest=Sliding2DArrayTest#getNbRows --file pom.xml
+
+      - name: Test slideDown() with Maven
+        run: mvn -B test -Dtest=Sliding2DArrayTest#getNbRows --file pom.xml
+
+      - name: Test slideLeft() with Maven
+        run: mvn -B test -Dtest=Sliding2DArrayTest#getNbRows --file pom.xml
+
+      - name: Test slideRight() with Maven
+        run: mvn -B test -Dtest=Sliding2DArrayTest#getNbRows --file pom.xml
+
     # - name: Build with Maven
     #   run: mvn -B package --file pom.xml
