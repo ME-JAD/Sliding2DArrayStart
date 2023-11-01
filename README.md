@@ -1,5 +1,3 @@
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ME-JAD/Sliding2DArrayStart/maven.yml)
-
 # Kata Sliding 2D Array made by JAD
 
 ## Objectif de ce Kata
