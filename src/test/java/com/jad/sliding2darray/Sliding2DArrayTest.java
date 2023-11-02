@@ -11,7 +11,7 @@ class Sliding2DArrayTest {
 
   private final int nbRows = 5;
   private final int nbColumns = 10;
-  private final Array2DImpl world = new Array2DImpl();
+  private final IWorldImpl world = new IWorldImpl();
   private ISliding2DArray<Point> playerView;
 
   @BeforeEach
@@ -107,23 +107,23 @@ class Sliding2DArrayTest {
     }
   }
 
-  private static class Array2DImpl implements Array2D<Point> {
+  private static class IWorldImpl implements IWorld<Point> {
 
     private static final int ROWS = 100;
     private static final int COLUMNS = 100;
 
-    private static boolean isOutOfBounds(final int row, final int column) {
-      return (row >= 0) && (row < Array2DImpl.ROWS) && (column >= 0) && (column < Array2DImpl.COLUMNS);
+    private static boolean isInside(final int row, final int column) {
+      return (row >= 0) && (row < IWorldImpl.ROWS) && (column >= 0) && (column < IWorldImpl.COLUMNS);
     }
 
     @Override
     public int getNbRows() {
-      return Array2DImpl.ROWS;
+      return IWorldImpl.ROWS;
     }
 
     @Override
     public int getNbColumns() {
-      return Array2DImpl.COLUMNS;
+      return IWorldImpl.COLUMNS;
     }
 
     @Override
@@ -135,7 +135,7 @@ class Sliding2DArrayTest {
       final Point[][] array = new Point[nbRows][nbColumns];
       for (int row = 0; row < nbRows; row++) {
         for (int column = 0; column < nbColumns; column++) {
-          if (Array2DImpl.isOutOfBounds(row + startRow, column + startColumn)) {
+          if (IWorldImpl.isInside(row + startRow, column + startColumn)) {
             array[row][column] = new Point(row + startRow, column + startColumn);
           } else {
             array[row][column] = null;

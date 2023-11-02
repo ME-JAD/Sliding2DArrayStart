@@ -87,20 +87,6 @@ public interface ISliding2DArray<E> {
   void slideRight(int steps);
 
   /**
-   * Gets sliding array column position.
-   *
-   * @return the slider column position
-   */
-  int getSliderColumnPosition();
-
-  /**
-   * Gets sliding array row position.
-   *
-   * @return the slider row position
-   */
-  int getSliderRowPosition();
-
-  /**
    * Get array e [ ] [ ].
    *
    * @return the e [ ] [ ]

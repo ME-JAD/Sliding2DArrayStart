@@ -90,11 +90,18 @@ Une autre illustration pour bien comprendre le principe :
 ![Illustration du tableau 2D glissant](https://github.com/Jean-Aymeric/Sliding2DArrayStart/blob/master/img/sliding2darray3.png)
 La nouvelle colonne de droite est stockée à gauche du tableau glissant.
 
-C'est ce tableau glissant que vous allez devoir implémenter dans ce Kata.
+C'est ce tableau glissant que vous allez devoir implémenter dans ce Kata. Pour le moment seules les
+tuiles seront gérées par ce tableau glissant. Les pièces seront implémentées dans un second temps.
 
 ## Voici le diagramme de classe de la situation initiale :
 
 ![Diagramme de classe de la situation initiale](https://github.com/Jean-Aymeric/Sliding2DArrayStart/blob/master/img/classdiagramsliding2darray.png)
+
+L'interface `ISliding2DArray` contient toutes les méthodes que votre composant doit implémenter.
+
+L'interface `Array2D` est présente pour que votre tableau ne soit pas dépendant de l'implémentation
+faite pour gérer les tuiles ou les pièces. Elle contient 2 méthodes `getNbColumns()`
+et `getNbRows()` qui permettent de connaitre les dimensions du monde du jeu.
 
 Comme vous pouvez le voir, il n'y a pas de `Main`, mais il y a des tests unitaires.
 
@@ -104,7 +111,7 @@ Si vous lancez les tests, vous devez obtenir ceci.
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.slideUp(Sliding2DArray.java:56)
-	at com.jad.sliding2darray.Sliding2DArrayTest.slideUp(Sliding2DArrayTest.java:61)
+	at com.jad.sliding2darray.Sliding2DArrayTest.slideUp(Sliding2DArrayTest.java:51)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -113,7 +120,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.slideDown(Sliding2DArray.java:61)
-	at com.jad.sliding2darray.Sliding2DArrayTest.slideDown(Sliding2DArrayTest.java:71)
+	at com.jad.sliding2darray.Sliding2DArrayTest.slideDown(Sliding2DArrayTest.java:66)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -122,7 +129,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.slideLeft(Sliding2DArray.java:66)
-	at com.jad.sliding2darray.Sliding2DArrayTest.slideLeft(Sliding2DArrayTest.java:81)
+	at com.jad.sliding2darray.Sliding2DArrayTest.slideLeft(Sliding2DArrayTest.java:82)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -131,7 +138,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.get(Sliding2DArray.java:46)
-	at com.jad.sliding2darray.Sliding2DArrayTest.get(Sliding2DArrayTest.java:40)
+	at com.jad.sliding2darray.Sliding2DArrayTest.get(Sliding2DArrayTest.java:36)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -140,7 +147,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.slide(Sliding2DArray.java:51)
-	at com.jad.sliding2darray.Sliding2DArrayTest.slide(Sliding2DArrayTest.java:55)
+	at com.jad.sliding2darray.Sliding2DArrayTest.slide(Sliding2DArrayTest.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -149,7 +156,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 java.lang.UnsupportedOperationException: Not implemented yet
 
 	at com.jad.sliding2darray.Sliding2DArray.slideRight(Sliding2DArray.java:71)
-	at com.jad.sliding2darray.Sliding2DArrayTest.slideRight(Sliding2DArrayTest.java:91)
+	at com.jad.sliding2darray.Sliding2DArrayTest.slideRight(Sliding2DArrayTest.java:97)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
@@ -170,11 +177,10 @@ Pour bien réussir ce Kata, je vous conseille de suivre ces étapes :
   remplira votre tableau glissant avec le monde en fonction de la position du tableau dans le
   monde (`arrayColumnInRealArray` et `arrayRowInRealArray`).
 - ajouter la gestion des bords du monde. Si le tableau sort du monde, les cases
-  correspondantes doivent être remplies avec `null`. Une petite méthode `isOutOfBounds()` rendra la
-  chose plus lisible et plus pratique. Les tests devraient tous passer. Ils ne
-  vérifient pas la rotation.
+  correspondantes doivent être remplies avec `null`. Une petite méthode `isInside()` rendra la
+  chose plus lisible et plus pratique. Les tests devraient tous passer. Ils ne vérifient pas la
+  rotation.
 - implémentez ensuite la rotation vers le bas ou la droite. Ils sont, à mon avis plus simples que
-  les
-  deux autres.
+  les deux autres.
 - implémentez les deux dernières rotations.
 - factorisez les rotations. Il doit y avoir du code dupliqué entre vos rotations. 

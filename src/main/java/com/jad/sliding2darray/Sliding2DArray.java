@@ -10,25 +10,23 @@ public class Sliding2DArray<E> implements ISliding2DArray<E> {
   private final int nbColumns;
   private final int nbRows;
   private final E[][] array;
-  private final Array2D<E> linked2DArray;
-  private int arrayColumnInRealArray;
-  private int arrayRowInRealArray;
+  private final IWorld<E> world;
+  private int arrayColumnInRealArray = 0;
+  private int arrayRowInRealArray = 0;
 
   /**
    * Instantiates a new Sliding 2 d array.
    *
-   * @param nbRows        the nb rows
-   * @param nbColumns     the nb columns
-   * @param linked2DArray the linked 2 d array
+   * @param nbRows    the nb rows
+   * @param nbColumns the nb columns
+   * @param world     the world
    */
   @SuppressWarnings("unchecked")
-  public Sliding2DArray(final int nbRows, final int nbColumns, final Array2D<E> linked2DArray) {
+  public Sliding2DArray(final int nbRows, final int nbColumns, final IWorld<E> world) {
     this.nbColumns = nbColumns;
     this.nbRows = nbRows;
     this.array = (E[][]) new Object[nbRows][nbColumns];
-    this.arrayColumnInRealArray = 0;
-    this.arrayRowInRealArray = 0;
-    this.linked2DArray = linked2DArray;
+    this.world = world;
   }
 
   @Override
@@ -88,16 +86,6 @@ public class Sliding2DArray<E> implements ISliding2DArray<E> {
 
   @Override
   public final void slideRight(final int steps) {
-    throw new UnsupportedOperationException("Not implemented yet");
-  }
-
-  @Override
-  public int getSliderColumnPosition() {
-    throw new UnsupportedOperationException("Not implemented yet");
-  }
-
-  @Override
-  public int getSliderRowPosition() {
     throw new UnsupportedOperationException("Not implemented yet");
   }
 
