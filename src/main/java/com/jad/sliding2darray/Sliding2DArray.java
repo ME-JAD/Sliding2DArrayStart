@@ -11,8 +11,8 @@ public class Sliding2DArray<E> implements ISliding2DArray<E> {
   private final int nbRows;
   private final E[][] array;
   private final IWorld<E> world;
-  private int arrayColumnInRealArray = 0;
-  private int arrayRowInRealArray = 0;
+  private int columnPositionInWorld = 0;
+  private int rowPositionInWorld = 0;
 
   /**
    * Instantiates a new Sliding 2 d array.
@@ -27,6 +27,7 @@ public class Sliding2DArray<E> implements ISliding2DArray<E> {
     this.nbRows = nbRows;
     this.array = (E[][]) new Object[nbRows][nbColumns];
     this.world = world;
+    this.fill();
   }
 
   @Override
@@ -91,6 +92,10 @@ public class Sliding2DArray<E> implements ISliding2DArray<E> {
 
   @Override
   public final E[][] getArray() {
+    throw new UnsupportedOperationException("Not implemented yet");
+  }
+
+  protected final void fill() {
     throw new UnsupportedOperationException("Not implemented yet");
   }
 }

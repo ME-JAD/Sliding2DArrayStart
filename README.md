@@ -173,9 +173,9 @@ accesseurs `getNbColumns()` et `getNbRows()`.
 
 Pour bien réussir ce Kata, je vous conseille de suivre ces étapes :
 
-- commencez par implémenter un tableau non rotatif. Pour cela, créez une méthode `load()`, qui
+- commencez par implémenter un tableau non rotatif. Pour cela, codez la méthode `fill()`, qui
   remplira votre tableau glissant avec le monde en fonction de la position du tableau dans le
-  monde (`arrayColumnInRealArray` et `arrayRowInRealArray`).
+  monde (`columnPositionInWorld` et `rowPositionInWorld`).
 - ajouter la gestion des bords du monde. Si le tableau sort du monde, les cases
   correspondantes doivent être remplies avec `null`. Une petite méthode `isInside()` rendra la
   chose plus lisible et plus pratique. Les tests devraient tous passer. Ils ne vérifient pas la
