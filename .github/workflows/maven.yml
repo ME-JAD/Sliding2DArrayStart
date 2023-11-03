@@ -28,29 +28,35 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Test getNbRows() with Maven
-        run: mvn -B test -Dtest=Sliding2DArrayTest#getNbRows --file pom.xml
+      - name: Test getNbRows()
+        run: mvn -B test -Dtest=PointSliding2DArrayTest#getNbRows --file pom.xml
 
-      - name: Test getNbColumns() with Maven
-        run: mvn -B test -Dtest=Sliding2DArrayTest#getNbColumns --file pom.xml
+      - name: Test getNbColumns()
+        run: mvn -B test -Dtest=PointSliding2DArrayTest#getNbColumns --file pom.xml
 
-      - name: Test get() with Maven
-        run: mvn -B test -Dtest=Sliding2DArrayTest#get --file pom.xml
+      - name: Pretty test
+        run: mvn -B test -Dtest=PrettySliding2DArrayTest#prettyTest --file pom.xml
 
-      - name: Test slide() with Maven
-        run: mvn -B test -Dtest=Sliding2DArrayTest#slide --file pom.xml
+      - name: Test get()
+        run: mvn -B test -Dtest=PointSliding2DArrayTest#get --file pom.xml
 
-      - name: Test slideUp() with Maven
-        run: mvn -B test -Dtest=Sliding2DArrayTest#slideUp --file pom.xml
+      - name: Test slide()
+        run: mvn -B test -Dtest=PointSliding2DArrayTest#slide --file pom.xml
 
-      - name: Test slideDown() with Maven
-        run: mvn -B test -Dtest=Sliding2DArrayTest#slideDown --file pom.xml
+      - name: Test slideUp()
+        run: mvn -B test -Dtest=PointSliding2DArrayTest#slideUp --file pom.xml
 
-      - name: Test slideLeft() with Maven
-        run: mvn -B test -Dtest=Sliding2DArrayTest#slideLeft --file pom.xml
+      - name: Test slideDown()
+        run: mvn -B test -Dtest=PointSliding2DArrayTest#slideDown --file pom.xml
 
-      - name: Test slideRight() with Maven
-        run: mvn -B test -Dtest=Sliding2DArrayTest#slideRight --file pom.xml
+      - name: Test slideLeft()
+        run: mvn -B test -Dtest=PointSliding2DArrayTest#slideLeft --file pom.xml
+
+      - name: Test slideRight()
+        run: mvn -B test -Dtest=PointSliding2DArrayTest#slideRight --file pom.xml
+
+      - name: Huge test
+        run: mvn -B test -Dtest=HugeWorldSliding2DArrayTest --file pom.xml
 
     # - name: Build with Maven
     #   run: mvn -B package --file pom.xml
