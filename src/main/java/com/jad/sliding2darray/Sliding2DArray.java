@@ -96,6 +96,6 @@ public class Sliding2DArray<E> implements ISliding2DArray<E> {
   }
 
   protected final void fill() {
-    throw new UnsupportedOperationException("Not implemented yet");
+    
   }
 }
