@@ -24,7 +24,7 @@ class GenericSliding2DArrayTest<E> {
 
   @BeforeEach
   void initEach() {
-    this.playerView = new Sliding2DArray<E>(this.nbRows, this.nbColumns, this.world);
+    this.playerView = new Sliding2DArray<>(this.nbRows, this.nbColumns, this.world);
   }
 
   @Test
@@ -66,7 +66,7 @@ class GenericSliding2DArrayTest<E> {
         this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), -1, 0),
         this.playerView.getArray(), "slideUp()");
     for (int step = 0; step <= this.playerView.getNbRows(); step++) {
-      this.playerView = new Sliding2DArray<E>(this.nbRows, this.nbColumns, this.world);
+      this.playerView = new Sliding2DArray<>(this.nbRows, this.nbColumns, this.world);
       this.playerView.slideUp(step);
       assertArrayEquals(
           this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), -step, 0),
@@ -82,7 +82,7 @@ class GenericSliding2DArrayTest<E> {
         this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 1, 0),
         this.playerView.getArray(), "slideDown()");
     for (int step = 0; step <= this.playerView.getNbRows(); step++) {
-      this.playerView = new Sliding2DArray<E>(this.nbRows, this.nbColumns, this.world);
+      this.playerView = new Sliding2DArray<>(this.nbRows, this.nbColumns, this.world);
       this.playerView.slideDown(step);
       assertArrayEquals(
           this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), step, 0),
@@ -98,7 +98,7 @@ class GenericSliding2DArrayTest<E> {
         this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 0, -1),
         this.playerView.getArray(), "slideLeft()");
     for (int step = 0; step <= this.playerView.getNbColumns(); step++) {
-      this.playerView = new Sliding2DArray<E>(this.nbRows, this.nbColumns, this.world);
+      this.playerView = new Sliding2DArray<>(this.nbRows, this.nbColumns, this.world);
       this.playerView.slideLeft(step);
       assertArrayEquals(
           this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 0, -step),
@@ -114,7 +114,7 @@ class GenericSliding2DArrayTest<E> {
         this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 0, 1),
         this.playerView.getArray(), "slideRight()");
     for (int step = 0; step <= this.playerView.getNbColumns(); step++) {
-      this.playerView = new Sliding2DArray<E>(this.nbRows, this.nbColumns, this.world);
+      this.playerView = new Sliding2DArray<>(this.nbRows, this.nbColumns, this.world);
       this.playerView.slideRight(step);
       assertArrayEquals(
           this.world.getArray(this.playerView.getNbRows(), this.playerView.getNbColumns(), 0, step),

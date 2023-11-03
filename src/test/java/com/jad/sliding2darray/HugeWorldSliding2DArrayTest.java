@@ -13,7 +13,7 @@ class HugeWorldSliding2DArrayTest extends GenericSliding2DArrayTest<Point> {
   private static int nbCallsToGet = 0;
 
   HugeWorldSliding2DArrayTest() {
-    super(new AbstractWorld<Point>(1000000, 1000000) {
+    super(new AbstractWorld<>(1000000, 1000000) {
       @Override
       public Point get(final int row, final int column) {
         HugeWorldSliding2DArrayTest.nbCallsToGet++;
