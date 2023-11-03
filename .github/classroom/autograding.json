@@ -58,7 +58,7 @@
       "output": null,
       "comparison": "exact",
       "timeout": 1,
-      "points": 2
+      "points": 1
     },
     {
       "name": "Test slideDown()",
@@ -68,7 +68,7 @@
       "output": null,
       "comparison": "exact",
       "timeout": 1,
-      "points": 2
+      "points": 1
     },
     {
       "name": "Test slideLeft()",
@@ -78,7 +78,7 @@
       "output": null,
       "comparison": "exact",
       "timeout": 1,
-      "points": 2
+      "points": 1
     },
     {
       "name": "Test slideRight()",
@@ -88,7 +88,7 @@
       "output": null,
       "comparison": "exact",
       "timeout": 1,
-      "points": 2
+      "points": 1
     },
     {
       "name": "Huge test",
