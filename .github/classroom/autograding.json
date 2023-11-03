@@ -1,0 +1,104 @@
+{
+  "tests": [
+    {
+      "name": "Test getNbRows()",
+      "setup": "",
+      "run": "mvn -B test -Dtest=PointSliding2DArrayTest#getNbRows --file pom.xml",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 0
+    },
+    {
+      "name": "Test getNbColumns()",
+      "setup": "",
+      "run": "mvn -B test -Dtest=PointSliding2DArrayTest#getNbColumns --file pom.xml",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 0
+    },
+    {
+      "name": "Pretty test",
+      "setup": "",
+      "run": "mvn -B test -Dtest=PrettySliding2DArrayTest#prettyTest --file pom.xml",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 0
+    },
+    {
+      "name": "Test get()",
+      "setup": "",
+      "run": "mvn -B test -Dtest=PointSliding2DArrayTest#get --file pom.xml",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 2
+    },
+    {
+      "name": "Test slide()",
+      "setup": "",
+      "run": "mvn -B test -Dtest=PointSliding2DArrayTest#slide --file pom.xml",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 2
+    },
+    {
+      "name": "Test slideUp()",
+      "setup": "",
+      "run": "mvn -B test -Dtest=PointSliding2DArrayTest#slideUp --file pom.xml",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 2
+    },
+    {
+      "name": "Test slideDown()",
+      "setup": "",
+      "run": "mvn -B test -Dtest=PointSliding2DArrayTest#slideDown --file pom.xml",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 2
+    },
+    {
+      "name": "Test slideLeft()",
+      "setup": "",
+      "run": "mvn -B test -Dtest=PointSliding2DArrayTest#slideLeft --file pom.xml",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 2
+    },
+    {
+      "name": "Test slideRight()",
+      "setup": "",
+      "run": "mvn -B test -Dtest=PointSliding2DArrayTest#slideRight --file pom.xml",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 2
+    },
+    {
+      "name": "Huge test",
+      "setup": "",
+      "run": "mvn -B test -Dtest=HugeWorldSliding2DArrayTest --file pom.xml",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    }
+  ]
+}
